@@ -1,0 +1,65 @@
+/**list.wxss**/
+.list {
+  height: 100%;
+}
+
+.item-nav {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #ddd;
+  padding: 30rpx;
+  padding-bottom: 22rpx;
+}
+
+.move-s {
+  align-items: flex-start;
+  flex: 0;
+}
+
+.move-s image {
+  width: 190rpx;
+  border-radius: 8rpx;
+}
+
+.list-right {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.film-title {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 45rpx;
+  margin-top: 5rpx;
+}
+
+.title {
+  flex: 1;
+  height: 70rpx;
+  font-size: 40rpx;
+  line-height: 70rpx;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.rating {
+  flex: 0;
+  align-items: flex-end;
+  font-size: 60rpx;
+  line-height: 70rpx;
+  color: red;
+  margin-left: 20rpx;
+}
+
+
+.discribe {
+  margin-top: 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  color: #333;
+  overflow: hidden;
+}

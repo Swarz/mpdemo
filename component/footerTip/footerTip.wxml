@@ -1,0 +1,5 @@
+<view class="footer-view">
+    <view class='{{type=="load"?tip_icon:""}} iconfont '></view>
+    <view class="text">{{tip}}</view>
+</view>
+<slot></slot>

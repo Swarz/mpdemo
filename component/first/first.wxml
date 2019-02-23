@@ -1,0 +1,37 @@
+<view class="first">
+  <view class="slide">
+    <swiper indicator-dots='true' autoplay='true' circular='true' interval='3000' duration='500' class="swiper">
+      <block wx:for="{{slides}}" wx:key="*this">
+        <swiper-item>
+          <navigator class='item-nav' hover-class="none" url="../film/film?id={{item.id}}">
+            <image src="{{item.images.large}}" mode='aspectFill'></image>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view>
+    <view class="bd-title">豆瓣电影榜单集合</view>
+    <view class="bd-title1">最新电影尽在掌握~</view>
+    <navigator hover-class="none" url="../list/list?id=1">
+      <!-- <view class="bangdan" bindtap="getChange" id='3'> -->
+      <view class="bangdan">
+        <text>正在热映</text>
+        <view class="iconfont icon-right"></view>
+      </view>
+    </navigator>
+    <navigator hover-class="none" url="../list/list?id=2">
+      <view class="bangdan">
+        <text>即将上映</text>
+        <span class="iconfont icon-right"></span>
+      </view>
+    </navigator>
+    <navigator hover-class="none" url="../list/list?id=3">
+      <view class="bangdan">
+        <text>TOP 250</text>
+        <span class="iconfont icon-right"></span>
+      </view>
+    </navigator>
+  </view>
+</view>
+<slot></slot>

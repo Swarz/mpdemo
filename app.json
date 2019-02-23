@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/film/film"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#35495e",
+    "navigationBarTitleText": "豆瓣电影",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "component-first": "./component/first/first",
+    "component-search": "./component/search/search",
+    "component-mine": "./component/mine/mine",
+    "component-footerTip": "./component/footerTip/footerTip"
+  }
+}

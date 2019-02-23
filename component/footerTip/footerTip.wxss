@@ -1,0 +1,31 @@
+@import '../../iconfont.wxss';
+
+.footer-view {
+    height: 100rpx;
+    width: 100%;
+    background-color: #e2e2e2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes icon-ani {
+    from {
+        transform: rotate3d(0, 0, 1, 0)
+    }
+
+    to {
+        transform: rotate3d(0, 0, 1, 360deg)
+    }
+}
+
+.rotate {
+    font-size: 40rpx;
+    animation: icon-ani 1s infinite;
+    margin-right: 30rpx
+}
+
+.text {
+    font-size: 30rpx;
+}

@@ -1,0 +1,31 @@
+<view class="list">
+  <loading hidden="{{!loading}}">{{loadTxt}}</loading>
+  <view class="move-item" wx:for='{{list}}' wx:key="index">
+    <navigator class='item-nav' hover-class="none" url="../film/film?id={{item.id}}">
+      <view class='move-s'>
+        <image src='{{item.images.small}}' mode="widthFix"></image>
+      </view>
+      <view class="list-right">
+        <view class='film-title'>
+          <text class="title">{{item.title}}</text>
+          <text class="rating">{{item.rating.average}}</text>
+        </view>
+        <view class="discribe">
+          <text>{{item.year}}</text>
+          <text wx:for="{{item.genres}}" wx:for-item="g" wx:key="index">/{{g}}</text>
+        </view>
+        <view class="discribe">
+          <text>导演：</text>
+          <text wx:for="{{item.directors}}" wx:for-item="d" wx:key="index">{{d.name}}\t</text>
+        </view>
+        <view class="discribe">
+          <text>演员：</text>
+          <text wx:for="{{item.casts}}" wx:for-item="c" wx:key="index">{{c.name}}\t</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <component-footerTip wx:if="{{footerTipType == 'load'}}" type='load' tip='不停试探着底线~'></component-footerTip>
+  <component-footerTip wx:if="{{footerTipType == 'end'}}" type='end' tip='我是有底线的~'></component-footerTip>
+</view>
+<slot></slot>

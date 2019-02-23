@@ -1,0 +1,18 @@
+<view class='container'>
+  <loading hidden="{{!loading}}">{{loadTxt}}</loading>
+  <view class='content'>
+    <component-first wx:if="{{nowPage == 'first'}}" id='first' slides='{{slides}}' bind:myevent="changPage"></component-first>
+    <component-search wx:if="{{nowPage == 'search'}}"></component-search>
+    <component-mine wx:if="{{nowPage == 'mine'}}"></component-mine>
+  </view>
+  <view class='bottom'>
+    <view class="tab-bar">
+      <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="index">
+        <view class="tab-item {{index==nowIndex?'active':''}}" bindtap="changPage" id="{{index}}">
+          <view class="iconfont {{item.iconClass}} icons"></view>
+          <text class="icon-text">{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+<view class="film {{showFlg && 'filterBg'}}">
+    <view class="photo">
+        <image class="t-img {{t_img_h}}" src="{{det.images.large}}" bindtouchstart='ts' bindtouchend='te' bindtouchcancel='te' mode='aspectFit' />
+    </view>
+    <view class='title'>
+        <view class="ttext">{{det.title}}({{det.year}})</view>
+        <view class="ttext2" wx:if="{{det.title!=det.original_title}}">{{det.original_title}}</view>
+        <view class="star">
+            <text wx:for="{{stars}}" class="{{item}} iconfont " wx:key="index"></text>
+        </view>
+        <view class="discribe">
+            <text>导演：</text>
+            <text wx:for="{{det.directors}}" wx:key="index">{{item.name}}\t</text>
+        </view>
+        <view class="discribe ">
+            <text>演员：</text>
+            <text wx:for="{{det.casts}}" wx:key="index">{{item.name}}\t</text>
+        </view>
+    </view>
+    <view class='outer1 {{disHC}}' bindtouchstart='ds' bindtouchend='de' bindtouchcancel='de'>
+        <view class="ss-title">简介</view>
+        <view class="absTx absTsH">{{det.summary}}</view>
+    </view>
+    <view class='outer2'>
+        <view class="ss-title2">演职员</view>
+        <scroll-view class="c-c" scroll-x="true">
+            <view class="c-c-p"></view>
+            <view class="yzry-item" wx:for="{{det.directors}}" wx:key="index">
+                <image class="yz-avatar" src="{{item.avatars.small}}" mode='aspectFit' />
+                <view class="yz-name">{{item.name}}</view>
+            </view>
+            <view class="yzry-item" wx:for="{{det.casts}}" wx:key="index">
+                <image class="yz-avatar" src="{{item.avatars.small}}" mode='aspectFit' />
+                <view class="yz-name">{{item.name}}</view>
+            </view>
+            <view class="c-c-p"></view>
+        </scroll-view>
+    </view>
+    <view class='outer3'>
+        <view class="ss-title">视频</view>
+        <view class="vss">豆瓣封了小程序的请求~~</view>
+    </view>
+    <view class="outer4">
+        <view class="ss-title">热门短评</view>
+        <view class='dp-item' wx:for="{{det.popular_comments}}" wx:key="index">
+            <view class='dp-wri'>
+                <image class="dp-img" mode='widthFix' src="{{item.author.avatar}}" />
+                <text class="dp-w-n">{{item.author.name}}</text>
+                <text class="dp-w-r">{{item.rating.value}}</text>
+                <text class="dp-w-d">{{item.created_at.created_at(0,10)}}</text>
+            </view>
+            <view class="dp-c">{{item.content}}</view>
+        </view>
+    </view>
+</view>
+<view class="absFix {{showFlg == 'abstract'?'absFix1':''}}">
+    <!-- <view animation="{{showFlg == 'abstract'?animationData:''}}"> -->
+    <view class="absti">简介</view>
+    <view class="absTx absTsHt1">{{det.summary}}</view>
+    <!-- </view> -->
+</view>
+<view class="vFix {{showFlg == 'f-photo'?'vFpH':''}}">
+    <view class="photo">
+        <image class="t-img {{showFlg == 'f-photo'?'vFpHp':''}}" src="{{det.images.large}}" mode='aspectFit' />
+    </view>
+</view>
+<slot></slot>

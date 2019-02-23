@@ -1,0 +1,16 @@
+<!-- pages/search/search.wxml -->
+<view class='search' catchtap='click' id="x">
+    <view class='search-c'>
+        <navigator hover-class="none">
+            <view class="sinput {{type == 'q'?'foucs':''}}" catchtap='click' id="1">
+                <text class="iconfont icon-i-search icons"></text>
+                <input class="weui-input" confirm-type='search' placeholder="搜索电影、电视剧、综艺、影人" placeholder-class="phClass" bindconfirm='search' />
+            </view>
+            <view class="sinput {{type == 'tag'?'foucs':''}}" catchtap='click' id="2">
+                <text class="iconfont icon-i-search icons"></text>
+                <input class="weui-input" confirm-type='search' placeholder="搜索分类、标签" placeholder-class="phClass" bindconfirm='search' />
+            </view>
+        </navigator>
+    </view>
+</view>
+<slot></slot>
