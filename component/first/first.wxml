@@ -13,7 +13,7 @@
   <view>
     <view class="bd-title">豆瓣电影榜单集合</view>
     <view class="bd-title1">最新电影尽在掌握~</view>
-    <navigator hover-class="none" url="../list/list?id=1">
+    <navigator hover-class="none" url="../list/list?id=1&city={{}}">
       <!-- <view class="bangdan" bindtap="getChange" id='3'> -->
       <view class="bangdan">
         <text>正在热映</text>

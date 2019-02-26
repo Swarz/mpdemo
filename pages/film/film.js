@@ -6,6 +6,7 @@ Page({
     stars: [],
     disHC: '',
     showFlg: '',
+    dp_show: null,
     // animationData: '',
     starClass: ['icon-star', 'icon-star-half', 'icon-starno'],
     loading: true
@@ -58,6 +59,18 @@ Page({
       disHC: '',
       showFlg: ''
     })
+  },
+  dpshow(e) {
+    const id = e.currentTarget.id
+    if (this.data.dp_show == id) {
+      this.setData({
+        dp_show: null
+      })
+    } else {
+      this.setData({
+        dp_show: id
+      })
+    }
   },
   // absAni() {
   //   var animation = wx.createAnimation({

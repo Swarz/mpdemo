@@ -20,7 +20,7 @@ Component({
         },
         search(e) {
             const val = e.detail.value
-            var target = `../list/list?id=0&type=${ this.data.type}&val=${val}`
+            var target = `../list/list?id=0&type=${this.data.type}&val=${val}`
             console.log(target);
             wx.navigateTo({
                 url: target
