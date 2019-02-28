@@ -15,10 +15,5 @@
     "component-search": "./component/search/search",
     "component-mine": "./component/mine/mine",
     "component-footerTip": "./component/footerTip/footerTip"
-  },
-  "permission": {
-    "scope.userLocation": {
-      "desc": "你的位置信息将用于获取当前城市的热映电影"
-    }
   }
 }

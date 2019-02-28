@@ -36,7 +36,3 @@
 .icon-text {
   font-size: 30rpx;
 }
-
-.filterBg {
-  filter: blur(8px);
-}

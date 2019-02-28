@@ -10,7 +10,6 @@ Page({
     loadTxt: '加载中...',
     nowIndex: 0,
     slides: [],
-    mineHide: false,
     tabBar: [{
         "iconClass": "icon-listgrid",
         "text": "榜单",
@@ -33,30 +32,15 @@ Page({
   },
   onLoad: function () {
     // const first = this.selectComponent("#first")
-    if (app.globalData.city) {
-      console.log('i1', app.globalData.city);
-      this.get_in_theaters(app.globalData.city)
-    } else {
-      app.loactionCallback = res => {
-        console.log('i2', this);
-        this.get_in_theaters(res)
-      }
-    }
-
-  },
-  get_in_theaters(city) {
     const that = this
-    const count = app.globalData.count
-    const search = {
-      city: city
-    }
-    douban.find(1, 1, count, search)
+    douban.find(1)
       .then(d => {
         // console.log(d);
+
         if (!d.subjects) {
           //没有新数据了
           wx.showToast({
-            title: '8好意思\n数次次数用完，请整点后访问~',
+            title: '8好意思\n介个数据坏掉鸟~',
             icon: 'none',
             duration: 5000
           })
@@ -77,10 +61,18 @@ Page({
         }
       })
       .catch(e => {
+        console.log(e)
         that.setData({
           loading: false
         })
-        console.log(e);
+
+        wx.showToast({
+          title: '8好意思\程序出错鸟~',
+          icon: 'none',
+          duration: 5000
+        })
+
+
       })
   },
   changPage(e) {
@@ -88,11 +80,6 @@ Page({
     this.setData({
       nowPage: this.data.pageName[id],
       nowIndex: id
-    })
-  },
-  fatherEvent(e) {
-    this.setData({
-      mineHide: e.detail.mineC
     })
   }
 })

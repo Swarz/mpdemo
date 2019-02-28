@@ -41,16 +41,15 @@
         <view class="vss">豆瓣封了小程序的请求~~</view>
     </view>
     <view class="outer4">
-        <view class="ss-title3">热门短评</view>
+        <view class="ss-title">热门短评</view>
         <view class='dp-item' wx:for="{{det.popular_comments}}" wx:key="index">
             <view class='dp-wri'>
-                <image class="dp-m-r dp-img" mode='widthFix' src="{{item.author.avatar}}" />
-                <text class="dp-m-r dp-w-n">{{item.author.name}}</text>
-                <text class="dp-m-r dp-w-r">{{item.rating.value}}分</text>
+                <image class="dp-img" mode='widthFix' src="{{item.author.avatar}}" />
+                <text class="dp-w-n">{{item.author.name}}</text>
+                <text class="dp-w-r">{{item.rating.value}}</text>
+                <text class="dp-w-d">{{item.created_at.created_at(0,10)}}</text>
             </view>
-            <view class="dp-c {{dp_show==index?'':'dp-cc1'}}" bindtap='dpshow' id="{{index}}">
-                {{item.content}}
-            </view>
+            <view class="dp-c">{{item.content}}</view>
         </view>
     </view>
 </view>
@@ -64,8 +63,5 @@
     <view class="photo">
         <image class="t-img {{showFlg == 'f-photo'?'vFpHp':''}}" src="{{det.images.large}}" mode='aspectFit' />
     </view>
-</view>
-<view class="cFix">
-    <view class="cFt">拉什么拉！</view>
 </view>
 <slot></slot>

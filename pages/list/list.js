@@ -10,13 +10,12 @@ Page({
     hasMore: true,
     loadTxt: '加载中...',
     footerTipType: '',
-    titleList: ['', '正在热映', '即将上映', 'TOP 250']
+    titleList: ['', '正在热映', '即将上映', 'TOP 250'],
+    count: 20
   },
   onLoad(params) {
     const id = params.id
-    var search = params.city ? {
-      city: params.city
-    } : ''
+    var search = ''
     //设置标题
     wx.setNavigationBarTitle({
       title: this.data.titleList[id]
@@ -52,8 +51,7 @@ Page({
   loadMore() {
     const that = this
     const id = that.data.id
-    const count = app.globalData.count
-    douban.find(id, app.globalData.api_list[id].num++, count, that.data.search)
+    douban.find(id, app.globalData.api_list[id].num++, that.data.count, that.data.search)
       .then(d => {
         if (d.subjects) {
           if (d.subjects.length == 0) {
@@ -73,7 +71,7 @@ Page({
           }
         } else {
           wx.showToast({
-            title: '8好意思\n数次次数用完，请整点后访问~',
+            title: '8好意思\n介个数据坏掉鸟~',
             icon: 'none',
             duration: 5000
           })

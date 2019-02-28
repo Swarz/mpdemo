@@ -75,6 +75,7 @@
 .absTsH {
     overflow: hidden;
     text-overflow: ellipsis;
+    height: 160rpx;
     word-break: break-all;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
@@ -84,7 +85,7 @@
 .absFix {
     position: fixed;
     min-height: 100%;
-    z-index: -4;
+    z-index: -1;
     left: 0;
     top: 0;
     padding: 40rpx 80rpx 0;
@@ -114,7 +115,7 @@
     width: 100%;
     left: 0;
     top: 0;
-    z-index: -3;
+    z-index: -2;
 }
 
 .vFpH {
@@ -129,23 +130,6 @@
     transition: all 1s ease-out;
 }
 
-.cFix {
-    position: fixed;
-    min-height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    background-color: white;
-}
-
-.cFt {
-    text-align: center;
-    margin-top: 40rpx;
-    letter-spacing: 8rpx;
-    color: #333;
-}
-
 .outer2 {
     padding: 30rpx 0;
     border-bottom: 1rpx solid #e2e2e2;
@@ -153,7 +137,7 @@
 
 .ss-title2 {
     font-size: 40rpx;
-    margin: 0 50rpx;
+    margin: 0 30rpx;
     padding-bottom: 20rpx;
 }
 
@@ -203,12 +187,8 @@
     border-bottom: 1rpx solid #e2e2e2;
 }
 
-.ss-title3 {
-    font-size: 40rpx;
-}
-
 .dp-item {
-    padding: 30rpx 0;
+    padding: 20rpx 0;
     border-bottom: 1rpx solid #e2e2e2;
 }
 
@@ -216,15 +196,10 @@
     display: flex;
     height: 50rpx;
     line-height: 50rpx;
-    margin-bottom: 20rpx;
 }
 
 .dp-wri text {
     font-size: 25rpx;
-}
-
-.dp-m-r {
-    margin-right: 30rpx;
 }
 
 .dp-w-r {
@@ -239,15 +214,4 @@
 
 .dp-c {
     font-size: 30rpx;
-    line-height: 40rpx;
-    display: -webkit-box;
-    color: #555;
-}
-
-.dp-cc1 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: break-all;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
 }

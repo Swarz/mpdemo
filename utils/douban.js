@@ -7,8 +7,6 @@ function fetchApi(type, params) {
     //Promise接收两个变量，并分别用.then .catch 返回给实例
     //return 层层返回给方法函数
     return new Promise((resolve, reject) => {
-        console.log(`${api_url}${type}`);
-        console.log(params);
         wx.request({
             url: `${api_url}/${type}`, //es6拼接变量和字符串,总体用``包裹,变量用 ${变量}
             method: 'GET',

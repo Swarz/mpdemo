@@ -3,9 +3,9 @@
   <view class='content'>
     <component-first wx:if="{{nowPage == 'first'}}" id='first' slides='{{slides}}' bind:myevent="changPage"></component-first>
     <component-search wx:if="{{nowPage == 'search'}}"></component-search>
-    <component-mine wx:if="{{nowPage == 'mine'}}" bind:sonEvent="fatherEvent"></component-mine>
+    <component-mine wx:if="{{nowPage == 'mine'}}"></component-mine>
   </view>
-  <view class='bottom {{mineHide && "filterBg"}}'>
+  <view class='bottom'>
     <view class="tab-bar">
       <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="index">
         <view class="tab-item {{index==nowIndex?'active':''}}" bindtap="changPage" id="{{index}}">

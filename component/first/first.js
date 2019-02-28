@@ -3,14 +3,6 @@ Component({
   properties: {
     slides: Array
   },
-  data: {
-    city: ''
-  },
-  attached() {
-    this.setData({
-      city: app.globalData.city
-    })
-  }
   // methods: {
   //   getChange(e) {
   //     this.triggerEvent('myevent', {
